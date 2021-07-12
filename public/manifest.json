@@ -2,7 +2,6 @@
   "manifest_version": 2,
   "name": "webev-extention",
   "version": "0.1.0",
-  "default_locale": "ja_JP",
   "browser_action": {
     "default_icon": "logo192.png",
     "default_popup": "index.html"
