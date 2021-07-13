@@ -1,5 +1,4 @@
 /node_modules/**
 /public/**
 /build/**
-App.js
 index.js
