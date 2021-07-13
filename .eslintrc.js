@@ -19,6 +19,8 @@ module.exports = {
     'react'
   ],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'space-before-function-paren': 'off',
+    'no-unused-vars': 'off',
   }
 };
