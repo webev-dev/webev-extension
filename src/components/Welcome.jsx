@@ -4,7 +4,7 @@ const Welcome = () => {
   return (
     <>
       <p>Welcome Webev!!</p>
-      <input></input>
+      <input />
     </>
   );
 };
