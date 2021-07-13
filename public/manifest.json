@@ -1,9 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "webev-extention",
+  "name": "webev-extension",
+  "description": "Save a page to webev with a single click",
   "version": "0.1.0",
+  "icons": {
+    "192":"images/icon192.png"
+  },
   "browser_action": {
-    "default_icon": "logo192.png",
+    "default_icon": "images/icon192.png",
     "default_popup": "index.html"
   }
 }
