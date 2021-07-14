@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     // TODO: accessToken を取得する処理を書く
-    setAccessToken('');
+    setAccessToken();
   }, []);
 
   return (

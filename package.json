@@ -10,7 +10,6 @@
     "sass": "^1.35.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint \"./**/*.{js,jsx}\""
   },
