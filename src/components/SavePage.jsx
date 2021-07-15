@@ -12,7 +12,6 @@ const SavePage = (props) => {
   const getCurrentUrl = () => {
     return new Promise((resolve) => {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        console.log(tabs[0]);
         resolve(tabs[0].url);
       });
     });
