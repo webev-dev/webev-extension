@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import Options from './Options';
+
 const SavePage = (props) => {
   const { accessToken } = props;
   const [saveStatusMessage, setSaveStatusMessage] = useState('saving...');
+  const [openOptionsButtonClicked, setOpenOptionsButtonClicked] = useState(false);
 
   const api = 'http://localhost:8000/api/v1/pages';
   const headers = { Authorization: accessToken };
@@ -30,7 +33,17 @@ const SavePage = (props) => {
   }, []);
 
   return (
-    <p>{saveStatusMessage}</p>
+    <>
+      {!openOptionsButtonClicked && (
+        <>
+          <p>{saveStatusMessage}</p>
+          <button onClick={() => setOpenOptionsButtonClicked(true)}>オプション</button>
+        </>
+      )}
+      {openOptionsButtonClicked && (
+        <Options />
+      )}
+    </>
   );
 };
 
