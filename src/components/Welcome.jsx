@@ -4,7 +4,7 @@ import Options from './Options';
 
 const Welcome = () => {
   const [inputAccessToken, setInputAccessToken] = useState('');
-  const [updateButtonPushed, setUpdateButtonPushed] = useState(false);
+  const [updateButtonClicked, setUpdateButtonClicked] = useState(false);
 
   const handleChange = (event) => {
     setInputAccessToken(event.target.value);
@@ -12,12 +12,12 @@ const Welcome = () => {
 
   const onClickSaveAccessTokenButton = () => {
     // TODO: accessToken を保存する処理をかく
-    setUpdateButtonPushed(true);
+    setUpdateButtonClicked(true);
   };
 
   return (
     <>
-      {!updateButtonPushed && (
+      {!updateButtonClicked && (
         <>
           <p>Welcome Webev!!</p>
           <a href="https://www.webev.cloud/ja" target="_blank" rel="noreferrer">https://www.webev.cloud/ja</a>
@@ -31,7 +31,7 @@ const Welcome = () => {
         </>
       )}
 
-      {updateButtonPushed && (
+      {updateButtonClicked && (
         <Options />
       )}
     </>
