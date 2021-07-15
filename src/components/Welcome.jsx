@@ -11,7 +11,7 @@ const Welcome = () => {
     setInputAccessToken(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const onClickSaveAccessTokenButton = () => {
     // TODO: accessToken を保存する処理をかく
     setUpdateButtonPushed(true);
   };
@@ -22,7 +22,7 @@ const Welcome = () => {
         <>
           <p>Welcome Webev!!</p>
           <a href="https://www.webev.cloud/ja" target="_blank" rel="noreferrer">https://www.webev.cloud/ja</a>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={onClickSaveAccessTokenButton}>
             <label>
               accessToken
               <input type="text" value={inputAccessToken} onChange={(e) => { handleChange(e); }} />
