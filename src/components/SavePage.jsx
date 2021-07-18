@@ -21,9 +21,8 @@ const SavePage = (props) => {
   };
 
   useEffect(async() => {
-    const currentUrl = await getCurrentUrl();
-
     try {
+      const currentUrl = await getCurrentUrl();
       await axios.post(api, { url: currentUrl }, { headers: headers });
       setSaveStatusMessage('Successfully saved!!');
     } catch (err) {
