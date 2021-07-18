@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Options from './Options';
+import Settings from './Settings';
 
 const Welcome = () => {
   const [inputAccessToken, setInputAccessToken] = useState('');
@@ -32,7 +32,7 @@ const Welcome = () => {
       )}
 
       {updateButtonClicked && (
-        <Options />
+        <Settings />
       )}
     </>
   );
