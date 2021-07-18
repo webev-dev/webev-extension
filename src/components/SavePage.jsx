@@ -9,8 +9,8 @@ const SavePage = (props) => {
   const [saveStatusMessage, setSaveStatusMessage] = useState('saving...');
   const [openSettingsButtonClicked, setOpenSettingsButtonClicked] = useState(false);
 
-  const api = 'http://localhost:8000/api/v1/pages';
-  const headers = { Authorization: accessToken };
+  const api = process.env.REACT_APP_API;
+  const headers = { Authorization: `Bearer ${accessToken}` };
 
   const getCurrentUrl = () => {
     return new Promise((resolve) => {

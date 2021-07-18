@@ -12,7 +12,7 @@ const Options = () => {
       <ul>
         <li>ページの url を webev に保存できます</li>
       </ul>
-      <a href="https://itizawa-tech.growi.cloud/projects/webev/%E6%96%BD%E7%AD%96/www.webev.cloud/inquery" target="_blank" rel="noreferrer">お問い合わせ</a>
+      <a href={process.env.REACT_APP_CONTACT_URL} target="_blank" rel="noreferrer">お問い合わせ</a>
       <button onClick={onClickDeleteAccessTokenButton}>accessToken を削除する</button>
     </>
   );
