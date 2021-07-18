@@ -1,8 +1,10 @@
+
 module.exports = {
   root: true,
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    webextensions: true
   },
   extends: [
     'plugin:react/recommended',
@@ -19,6 +21,8 @@ module.exports = {
     'react'
   ],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'space-before-function-paren': 'off',
+    'no-unused-vars': 'off'
   }
 };

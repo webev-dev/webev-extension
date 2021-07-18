@@ -11,9 +11,6 @@ $ cd webev-extension
 # Install dependencies
 $ yarn
 
-# Runs the app in the development mode
-$ yarn start
-
 # Builds the app for production to the build
 $ yarn build
 ```
