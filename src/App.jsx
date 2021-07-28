@@ -4,22 +4,25 @@ import Welcome from './components/Welcome';
 import SavePage from './components/SavePage';
 
 const App = () => {
-  const [accessToken, setAccessToken] = useState(null);
+  const [apiTokenForExtension, setApiTokenForExtension] = useState(null);
 
   useEffect(() => {
-    // TODO: accessToken を取得する処理を書く
-    setAccessToken();
+    chrome.storage.local.get('apiTokenForExtension', (result) => {
+      if (result.apiTokenForExtension) {
+        setApiTokenForExtension(result.apiTokenForExtension);
+      }
+    });
   }, []);
 
   return (
     <div className="app-body">
 
-      {accessToken == null && (
+      {apiTokenForExtension == null && (
         <Welcome />
       )}
 
-      {accessToken != null && (
-        <SavePage accessToken={accessToken} />
+      {apiTokenForExtension != null && (
+        <SavePage apiTokenForExtension={apiTokenForExtension} />
       )}
     </div>
   );

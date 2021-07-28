@@ -2,8 +2,7 @@ import React from 'react';
 
 const Options = () => {
   const onClickDeleteAccessTokenButton = () => {
-    // TODO: accessToken を破棄する為の処理を書く
-    console.log('deleteAccessTokenButton clicked');
+    chrome.storage.local.remove(['apiTokenForExtension']);
   };
 
   return (

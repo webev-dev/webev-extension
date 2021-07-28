@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import Settings from './Settings';
 
 const SavePage = (props) => {
-  const { accessToken } = props;
+  const { apiTokenForExtension } = props;
   const [saveStatusMessage, setSaveStatusMessage] = useState('saving...');
   const [openSettingsButtonClicked, setOpenSettingsButtonClicked] = useState(false);
 
   const api = process.env.REACT_APP_API;
-  const headers = { Authorization: `Bearer ${accessToken}` };
+  const headers = { Authorization: `Bearer ${apiTokenForExtension}` };
 
   const getCurrentUrl = () => {
     return new Promise((resolve) => {
@@ -47,7 +47,7 @@ const SavePage = (props) => {
 };
 
 SavePage.propTypes = {
-  accessToken: PropTypes.string.isRequired
+  apiTokenForExtension: PropTypes.string.isRequired
 };
 
 export default SavePage;
