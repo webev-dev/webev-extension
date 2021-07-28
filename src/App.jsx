@@ -7,9 +7,9 @@ const App = () => {
   const [accessToken, setAccessToken] = useState(null);
 
   useEffect(() => {
-    chrome.storage.local.get('accessToken', (result) => {
-      if (result.accessToken) {
-        setAccessToken(result.accessToken);
+    chrome.storage.local.get('apiTokenForExtension', (result) => {
+      if (result.apiTokenForExtension) {
+        setAccessToken(result.apiTokenForExtension);
       }
     });
   }, []);

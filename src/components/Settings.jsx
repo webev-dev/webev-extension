@@ -2,7 +2,7 @@ import React from 'react';
 
 const Options = () => {
   const onClickDeleteAccessTokenButton = () => {
-    chrome.storage.local.remove(['accessToken']);
+    chrome.storage.local.remove(['apiTokenForExtension']);
   };
 
   return (

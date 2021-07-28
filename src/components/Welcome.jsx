@@ -11,7 +11,7 @@ const Welcome = () => {
   };
 
   const onClickSaveAccessTokenButton = () => {
-    chrome.storage.local.set({ accessToken: inputAccessToken });
+    chrome.storage.local.set({ apiTokenForExtension: inputAccessToken });
     setUpdateButtonClicked(true);
   };
 
