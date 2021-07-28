@@ -3,7 +3,6 @@ import React from 'react';
 const Options = () => {
   const onClickDeleteAccessTokenButton = () => {
     chrome.storage.local.remove(['accessToken']);
-    console.log('deleteAccessTokenButton clicked');
   };
 
   return (
