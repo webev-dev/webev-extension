@@ -7,8 +7,11 @@ const App = () => {
   const [accessToken, setAccessToken] = useState(null);
 
   useEffect(() => {
-    // TODO: accessToken を取得する処理を書く
-    setAccessToken();
+    chrome.storage.local.get('accessToken', (result) => {
+      if (result.accessToken) {
+        setAccessToken(result.accessToken);
+      }
+    });
   }, []);
 
   return (
