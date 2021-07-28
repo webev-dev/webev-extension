@@ -2,7 +2,7 @@ import React from 'react';
 
 const Options = () => {
   const onClickDeleteAccessTokenButton = () => {
-    // TODO: accessToken を破棄する為の処理を書く
+    chrome.storage.local.remove(['accessToken']);
     console.log('deleteAccessTokenButton clicked');
   };
 

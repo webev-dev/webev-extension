@@ -11,7 +11,7 @@ const Welcome = () => {
   };
 
   const onClickSaveAccessTokenButton = () => {
-    // TODO: accessToken を保存する処理をかく
+    chrome.storage.local.set({ accessToken: inputAccessToken });
     setUpdateButtonClicked(true);
   };
 
