@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import Settings from './Settings';
 
 const Welcome = () => {
-  const [inputAccessToken, setInputAccessToken] = useState('');
+  const [apiTokenForExtension, setApiTokenForExtension] = useState('');
   const [updateButtonClicked, setUpdateButtonClicked] = useState(false);
 
   const handleChange = (event) => {
-    setInputAccessToken(event.target.value);
+    setApiTokenForExtension(event.target.value);
   };
 
   const onClickSaveAccessTokenButton = () => {
-    chrome.storage.local.set({ apiTokenForExtension: inputAccessToken });
+    chrome.storage.local.set({ apiTokenForExtension });
     setUpdateButtonClicked(true);
   };
 
@@ -24,7 +24,7 @@ const Welcome = () => {
           <form onSubmit={onClickSaveAccessTokenButton}>
             <label>
               accessToken
-              <input type="text" value={inputAccessToken} onChange={(e) => { handleChange(e); }} />
+              <input type="text" value={setApiTokenForExtension} onChange={(e) => { handleChange(e); }} />
             </label>
             <input type="submit" value="更新" />
           </form>
