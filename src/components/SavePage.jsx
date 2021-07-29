@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 
 import Settings from './Settings';
 
+const api = process.env.REACT_APP_API;
+
 const SavePage = (props) => {
   const { apiTokenForExtension } = props;
   const [saveStatusMessage, setSaveStatusMessage] = useState('saving...');
   const [openSettingsButtonClicked, setOpenSettingsButtonClicked] = useState(false);
-
-  const api = process.env.REACT_APP_API;
-  const headers = { Authorization: `Bearer ${apiTokenForExtension}` };
 
   const getCurrentUrl = () => {
     return new Promise((resolve) => {
@@ -23,7 +22,7 @@ const SavePage = (props) => {
   useEffect(async() => {
     try {
       const currentUrl = await getCurrentUrl();
-      await axios.post(api, { url: currentUrl }, { headers: headers });
+      await axios.post(api, { url: currentUrl, apiTokenForExtension });
       setSaveStatusMessage('Successfully saved!!');
     } catch (err) {
       console.log(err);
