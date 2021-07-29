@@ -6,10 +6,6 @@ const Welcome = () => {
   const [apiTokenForExtension, setApiTokenForExtension] = useState('');
   const [updateButtonClicked, setUpdateButtonClicked] = useState(false);
 
-  const handleChange = (event) => {
-    setApiTokenForExtension(event.target.value);
-  };
-
   const onClickSaveAccessTokenButton = () => {
     chrome.storage.local.set({ apiTokenForExtension });
     setUpdateButtonClicked(true);
@@ -24,7 +20,7 @@ const Welcome = () => {
           <form onSubmit={onClickSaveAccessTokenButton}>
             <label>
               accessToken
-              <input type="text" value={setApiTokenForExtension} onChange={(e) => { handleChange(e); }} />
+              <input type="text" value={apiTokenForExtension} onChange={(e) => { setApiTokenForExtension(e.target.value); }} />
             </label>
             <input type="submit" value="更新" />
           </form>
