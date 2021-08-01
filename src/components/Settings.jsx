@@ -1,6 +1,6 @@
 import React from 'react';
 
-const inquiryUrl = process.env.REACT_APP_CONTACT_URL
+const inquiryUrl = process.env.REACT_APP_CONTACT_URL;
 
 const Options = () => {
   const onClickDeleteAccessTokenButton = () => {
