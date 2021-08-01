@@ -22,7 +22,7 @@ const SavePage = (props) => {
   useEffect(async() => {
     try {
       const currentUrl = await getCurrentUrl();
-      await axios.post(`${api}/api/pages`, { url: currentUrl, apiTokenForExtension });
+      await axios.post(`${api}/api/v1/pages`, { url: currentUrl, apiTokenForExtension });
       setSaveStatusMessage('Successfully saved!!');
     } catch (err) {
       console.log(err);
